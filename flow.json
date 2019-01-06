@@ -1,0 +1,46 @@
+{
+  "begin": {
+    "component": {
+      "id": "begin",
+      "source": "builtin"
+    },
+    "next": "task1"
+  },
+  "task1": {
+    "component": {
+      "id": "basic-component-1",
+      "source": "custom"
+    },
+    "next": "task2"
+  },
+  "cond1": {
+    "component": {
+      "id": "condition",
+      "source": "builtin"
+    },
+    "expression": "count > 20",
+    "true": "end",
+    "false": "task1"
+  },
+  "task2": {
+    "component": {
+      "id": "basic-component-2",
+      "source": "custom"
+    },
+    "next": "task3"
+  },
+  "task3": {
+    "component": {
+      "id": "basic-component-3",
+      "source": "custom"
+    },
+    "next": "cond1"
+  },
+  "end": {
+    "component": {
+      "id": "end",
+      "source": "builtin"
+    },
+    "next": null
+  }
+}
